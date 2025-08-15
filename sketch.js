@@ -3,7 +3,7 @@ let angle = 0;
 let t = 0;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(300, 200);
   angleMode(DEGREES);
   noStroke();
 }
