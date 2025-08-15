@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Portfolio</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      video {
+        width: 80%;
+        max-width: 600px;
+        height: auto;
+      }  
+      .description {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+  line-height: 1.6;
+  padding: 10px;
+  border: 2px solid palevioletred;
+  border-radius: 40px;
+}  
+    </style>
+  </head>
+  <body>
+    <h1>portfolio</h1>
+  </body>
+</html>
+<video controls>
+    <source src="monster in the mirror.mp4" type="video/mp4">
+  </video>
+  <p class="description">
+    My short film "Monster in the Mirror" explores the themes of femininity and Eurocentric beauty, and the toll these subjects have on young minority girls who are blossoming into their adolescence. Engaging with critical text and poetry that explore the themes of ethnicity and feeling sub-human, "Monster in the Mirror" aims to explore these feelings in the format of a coming-of-age story. I hope to invoke a message within my film that shows that— perhaps, yes, being a racial minority makes us different, but that doesn't mean we are monstrous. Symbolized by the monster, created by other pieces of native animals from Japan, Puerto Rico, and North America, I am to capture the feeling of not feeling comfortable in your skin and the sense of not feeling that you belong.
+  </p>
+  <!-- Second video -->
+  <video controls>     
+    <source src="FInal Project.mp4" type="video/mp4">   
+  </video>
+  <p class="description">
+    I know this sucks, it was my first time using blender and animating. I tried my best so I'm proud of that!
+  </p>
+
+  <div class="social-links">
+    <h3>Follow me:</h3>
+    <a href="https://www.instagram.com/m1yumi/" class="social-link">Instagram</a>
+    <a href="https://letterboxd.com/miyumi/" class="social-link">Letterboxd</a>
+  </div>
+  
+</body> 
+</html>
+
+
+    
