@@ -1,0 +1,164 @@
+<html>
+ <head>
+   <title>About - Lea Vazquez</title>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+   <style>
+     body {
+       text-align: center;
+       font-family: 'Open Sans', Arial, sans-serif;
+       margin: 0;
+       padding-top: 80px;
+       background-color: #fafafa;
+     }
+     .sticky-name {
+       position: fixed;
+       top: 0;
+       left: 0;
+       right: 0;
+       background-color: rgba(255, 255, 255, 0.95);
+       backdrop-filter: blur(10px);
+       z-index: 1000;
+       padding: 15px 0;
+       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+     }
+     .name-image {
+       height: 40px;
+       width: auto;
+       margin: 0;
+     }
+     .nav-link {
+       padding: 0 30px;
+       font-size: 1.2em;
+       color: #333;
+       text-decoration: none;
+       transition: color 0.3s ease;
+     }
+     .nav-link:hover {
+       color: #666;
+     }
+     .content {
+       padding: 40px 20px;
+       max-width: 800px;
+       margin: 0 auto;
+     }
+     .about-section {
+       background: white;
+       padding: 40px;
+       border-radius: 20px;
+       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+       margin: 30px 0;
+       text-align: left;
+     }
+     .about-section h2 {
+       color: palevioletred;
+       font-size: 1.8em;
+       margin-bottom: 20px;
+       text-align: center;
+     }
+     .about-section p {
+       line-height: 1.6;
+       color: #555;
+       margin-bottom: 15px;
+     }
+     .profile-image {
+       width: 200px;
+       height: 200px;
+       border-radius: 50%;
+       margin: 20px auto;
+       display: block;
+       border: 3px solid palevioletred;
+     }
+     .skills-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+       gap: 15px;
+       margin: 20px 0;
+     }
+     .skill-item {
+       background: #f8f8f8;
+       padding: 15px;
+       border-radius: 10px;
+       border: 2px solid palevioletred;
+       font-weight: 600;
+       color: #333;
+     }
+     .contact-info {
+       background: linear-gradient(135deg, palevioletred, #ff69b4);
+       color: white;
+       padding: 30px;
+       border-radius: 20px;
+       margin: 30px 0;
+     }
+     .contact-info h3 {
+       margin-top: 0;
+     }
+     .contact-link {
+       color: white;
+       text-decoration: none;
+       font-weight: 600;
+       margin: 0 15px;
+       padding: 8px 16px;
+       border: 2px solid white;
+       border-radius: 20px;
+       display: inline-block;
+       margin-top: 10px;
+       transition: all 0.3s ease;
+     }
+     .contact-link:hover {
+       background: white;
+       color: palevioletred;
+     }
+   </style>
+ </head>
+ <body>
+   <div class="sticky-name">
+     <a href="portfolio.html" class="nav-link">works</a>
+     <img src="font.png" alt="Lea Vazquez" class="name-image">
+     <a href="index.html" class="nav-link">home</a>
+   </div>
+
+   <div class="content">
+     <h1>about</h1>
+     
+     <img src="https://raw.githubusercontent.com/m1yumi/m1yumi.github.io/main/lea.jpg" alt="Lea Vazquez" class="profile-image">
+     
+     <div class="about-section">
+       <h2>Hi, I'm Lea!</h2>
+       <p>I'm a creative individual passionate about storytelling through visual media. My work explores themes of identity, culture, and the human experience, often drawing from my own multicultural background.</p>
+       
+       <p>Currently, I'm diving into the world of digital art and animation, always trying my best to push creative boundaries and learn new techniques. Whether it's through film, 3D animation, or interactive web experiences, I love creating work that resonates with people on a personal level.</p>
+       
+       <p>When I'm not creating, you can find me exploring new films, experimenting with generative art, or working on projects that blend technology with artistic expression.</p>
+     </div>
+
+     <div class="about-section">
+       <h2>Skills & Tools</h2>
+       <div class="skills-grid">
+         <div class="skill-item">Filmmaking</div>
+         <div class="skill-item">Blender</div>
+         <div class="skill-item">p5.js</div>
+         <div class="skill-item">Web Development</div>
+         <div class="skill-item">Video Editing</div>
+         <div class="skill-item">Generative Art</div>
+         <div class="skill-item">Storytelling</div>
+         <div class="skill-item">Animation</div>
+       </div>
+     </div>
+
+     <div class="contact-info">
+       <h3>Let's Connect!</h3>
+       <p>I'm always interested in collaborating on creative projects or just chatting about art and technology.</p>
+       <div>
+         <a href="https://www.instagram.com/m1yumi/" class="contact-link">Instagram</a>
+         <a href="https://letterboxd.com/miyumi/" class="contact-link">Letterboxd</a>
+         <a href="mailto:your-email@example.com" class="contact-link">Email</a>
+       </div>
+     </div>
+   </div>
+   
+ </body> 
+</html>
