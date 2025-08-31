@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K Interactive Plaid Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+        }
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #8B4513;
+            background: rgba(245, 240, 232, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid #CD853F;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #B8860B;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+        }
+        .controls p {
+            margin: 5px 0;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="controls">
+
+        <p><strong>CLICK</strong> - Generate new pattern</p>
+        <p><strong>SPACE</strong> - Change style mode</p>
+        <p><strong>S</strong> - Save current pattern</p>
+        <p><strong>R</strong> - Random animation</p>
+    </div>
+
+
+
+    <script>
+        // Y2K inspired color palettes
+        let colorPalettes = [
+            // Autumn vibes (from your images)
+            {
+                name: "Autumn Vibes",
+                colors: [
+                    [139, 69, 19],   // saddle brown
+                    [205, 133, 63],  // peru
+                    [222, 184, 135], // burlywood
+                    [245, 222, 179], // wheat
+                    [255, 228, 196], // bisque
+                    [188, 143, 143], // rosy brown
+                    [205, 92, 92],   // indian red
+                    [144, 238, 144], // light green
+                    [107, 142, 35],  // olive drab
+                ]
+            },
+            // Pink paradise
+            {
+                name: "Pink Paradise", 
+                colors: [
+                    [255, 192, 203], // pink
+                    [255, 20, 147],  // deep pink
+                    [219, 112, 147], // pale violet red
+                    [240, 128, 128], // light coral
+                    [255, 228, 225], // misty rose
+                    [222, 184, 135], // burlywood
+                    [210, 180, 140], // tan
+                    [255, 248, 220], // cornsilk
+                ]
+            },
+            // Green machine
+            {
+                name: "Green Machine",
+                colors: [
+                    [144, 238, 144], // light green
+                    [107, 142, 35],  // olive drab
+                    [154, 205, 50],  // yellow green
+                    [173, 255, 47],  // green yellow
+                    [240, 230, 140], // khaki
+                    [255, 228, 196], // bisque
+                    [222, 184, 135], // burlywood
+                    [205, 133, 63],  // peru
+                ]
+            },
+            // Retro sunset
+            {
+                name: "Retro Sunset",
+                colors: [
+                    [255, 99, 71],   // tomato
+                    [255, 140, 0],   // dark orange
+                    [255, 215, 0],   // gold
+                    [255, 228, 181], // moccasin
+                    [245, 222, 179], // wheat
+                    [222, 184, 135], // burlywood
+                    [188, 143, 143], // rosy brown
+                    [205, 133, 63],  // peru
+                ]
+            }
+        ];
+
+        let currentPalette = 0;
+        let patternType = 0; // 0: classic plaid, 1: diagonal, 2: mixed, 3: complex
+        let stripeWidths = [];
+        let stripeColors = [];
+        let bgColor;
+        let animating = false;
+        let animationOffset = 0;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            generateNewPattern();
+        }
+
+        function draw() {
+            if (animating) {
+                animationOffset += 0.02;
+                generateNewPattern();
+            }
+            drawPattern();
+        }
+
+        function generateNewPattern() {
+            let palette = colorPalettes[currentPalette];
+            
+            // Choose background color (lightest color from palette)
+            bgColor = color(palette.colors[palette.colors.length - 1]);
+            
+            // Generate stripe widths and colors
+            stripeWidths = [];
+            stripeColors = [];
+            
+            let numStripes = random(6, 15);
+            
+            for (let i = 0; i < numStripes; i++) {
+                // Y2K style varied stripe widths
+                let w = random(8, 60);
+                if (random() < 0.3) w = random(2, 8); // thin accent stripes
+                stripeWidths.push(w);
+                
+                // Choose colors with some transparency for layering
+                let col = random(palette.colors);
+                let alpha = random(60, 200);
+                if (random() < 0.2) alpha = 255; // some solid stripes
+                
+                stripeColors.push(color(col[0], col[1], col[2], alpha));
+            }
+        }
+
+        function drawPattern() {
+            background(bgColor);
+            
+            if (patternType === 0) {
+                drawClassicPlaid();
+            } else if (patternType === 1) {
+                drawDiagonalPlaid();
+            } else if (patternType === 2) {
+                drawMixedPattern();
+            } else {
+                drawComplexPattern();
+            }
+        }
+
+        function drawClassicPlaid() {
+            // Vertical stripes
+            let x = 0;
+            let stripeIndex = 0;
+            
+            while (x < width) {
+                let w = stripeWidths[stripeIndex % stripeWidths.length];
+                fill(stripeColors[stripeIndex % stripeColors.length]);
+                noStroke();
+                rect(x, 0, w, height);
+                x += w;
+                stripeIndex++;
+            }
+            
+            // Horizontal stripes with blend mode
+            blendMode(MULTIPLY);
+            let y = 0;
+            stripeIndex = 0;
+            
+            while (y < height) {
+                let h = stripeWidths[stripeIndex % stripeWidths.length];
+                fill(stripeColors[stripeIndex % stripeColors.length]);
+                rect(0, y, width, h);
+                y += h;
+                stripeIndex++;
+            }
+            blendMode(BLEND);
+        }
+
+        function drawDiagonalPlaid() {
+            push();
+            translate(width/2, height/2);
+            rotate(PI/4);
+            translate(-width, -height);
+            
+            // Diagonal stripes
+            let x = -width;
+            let stripeIndex = 0;
+            
+            while (x < width * 2) {
+                let w = stripeWidths[stripeIndex % stripeWidths.length];
+                fill(stripeColors[stripeIndex % stripeColors.length]);
+                noStroke();
+                rect(x, -height, w, height * 3);
+                x += w;
+                stripeIndex++;
+            }
+            
+            // Perpendicular diagonal stripes
+            blendMode(MULTIPLY);
+            rotate(PI/2);
+            x = -width * 2;
+            stripeIndex = 0;
+            
+            while (x < width * 2) {
+                let w = stripeWidths[stripeIndex % stripeWidths.length];
+                fill(stripeColors[stripeIndex % stripeColors.length]);
+                rect(x, -height * 2, w, height * 4);
+                x += w;
+                stripeIndex++;
+            }
+            blendMode(BLEND);
+            pop();
+        }
+
+        function drawMixedPattern() {
+            // Mix of vertical and diagonal
+            drawClassicPlaid();
+            
+            blendMode(SCREEN);
+            push();
+            translate(width/2, height/2);
+            rotate(PI/6 + animationOffset);
+            translate(-width/2, -height/2);
+            
+            let spacing = 40;
+            for (let i = 0; i < stripeWidths.length; i++) {
+                let col = stripeColors[i];
+                stroke(red(col), green(col), blue(col), 100);
+                strokeWeight(stripeWidths[i] * 0.3);
+                
+                let y = i * spacing;
+                line(-width, y, width * 2, y);
+            }
+            pop();
+            blendMode(BLEND);
+        }
+
+        function drawComplexPattern() {
+            // Complex layered pattern
+            background(bgColor);
+            
+            // Base layer - small checks
+            let checkSize = 20;
+            for (let x = 0; x < width; x += checkSize) {
+                for (let y = 0; y < height; y += checkSize) {
+                    if ((floor(x/checkSize) + floor(y/checkSize)) % 2 === 0) {
+                        fill(stripeColors[0]);
+                        rect(x, y, checkSize, checkSize);
+                    }
+                }
+            }
+            
+            // Layer 2 - larger stripes
+            blendMode(MULTIPLY);
+            let x = 0;
+            let stripeIndex = 0;
+            
+            while (x < width) {
+                let w = stripeWidths[stripeIndex % stripeWidths.length] * 2;
+                fill(stripeColors[stripeIndex % stripeColors.length]);
+                rect(x, 0, w, height);
+                x += w;
+                stripeIndex++;
+            }
+            
+            // Layer 3 - diagonal accent
+            blendMode(OVERLAY);
+            for (let i = -width; i < width * 2; i += 30) {
+                stroke(stripeColors[i % stripeColors.length]);
+                strokeWeight(2);
+                line(i, -height, i + height, height * 2);
+            }
+            
+            blendMode(BLEND);
+        }
+
+
+
+        function mousePressed() {
+            generateNewPattern();
+        }
+
+        function keyPressed() {
+            if (key === ' ') {
+                patternType = (patternType + 1) % 4;
+            } else if (key === 'r' || key === 'R') {
+                animating = !animating;
+            } else if (key === 's' || key === 'S') {
+                save('y2k_plaid_' + Date.now() + '.png');
+            } else if (key === 'c' || key === 'C') {
+                currentPalette = (currentPalette + 1) % colorPalettes.length;
+                generateNewPattern();
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+</body>
+</html>
