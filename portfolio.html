@@ -1,11 +1,43 @@
 <html>
  <head>
-   <title>Portfolio</title>
+   <title>Portfolio - Lea Vazquez</title>
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
    <style>
      body {
        text-align: center;
        font-family: 'Open Sans', Arial, sans-serif;
+       margin: 0;
+       padding-top: 80px; /* Add space for the sticky header */
+     }
+     .sticky-name {
+       position: fixed;
+       top: 0;
+       left: 0;
+       right: 0;
+       background-color: rgba(255, 255, 255, 0.95);
+       backdrop-filter: blur(10px);
+       z-index: 1000;
+       padding: 15px 0;
+       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+     }
+     .name-image {
+       height: 40px; /* Adjust this to make the image bigger/smaller */
+       width: auto;
+       margin: 0;
+     }
+     .nav-link {
+       padding: 0 30px;
+       font-size: 1.2em;
+       color: #333;
+       text-decoration: none;
+       transition: color 0.3s ease;
+     }
+     .nav-link:hover {
+       color: #666;
      }
      video {
        width: 80%;
@@ -62,37 +94,44 @@
    </style>
  </head>
  <body>
-   <h1>portfolio</h1>
-   
-   <h2 class="work-title">Monster in the Mirror</h2>
-   <p class="work-year">2024</p>
-   
-   <div class="video-container">
-     <iframe src="https://www.youtube.com/embed/WHEWjtzUro4" frameborder="0" allowfullscreen></iframe>
+   <div class="sticky-name">
+     <a href="index.html" class="nav-link">home</a>
+     <img src="font.png" alt="Lea Vazquez" class="name-image">
+     <a href="about.html" class="nav-link">about</a>
    </div>
-   <p class="description">
-     My short film "Monster in the Mirror" explores the themes of femininity and Eurocentric beauty, and the toll these subjects have on young minority girls who are blossoming into their adolescence. Engaging with critical text and poetry that explore the themes of ethnicity and feeling sub-human, "Monster in the Mirror" aims to explore these feelings in the format of a coming-of-age story. I hope to invoke a message within my film that shows that— perhaps, yes, being a racial minority makes us different, but that doesn't mean we are monstrous. Symbolized by the monster, created by other pieces of native animals from Japan, Puerto Rico, and North America, I am to capture the feeling of not feeling comfortable in your skin and the sense of not feeling that you belong.
-   </p>
-   
-   <h2 class="work-title">First Blender Animation</h2>
-   <p class="work-year">2024</p>
-   
-   <!-- Second video (YouTube embed) -->
-   <div class="video-container">
-     <iframe src="https://www.youtube.com/embed/GKPzHrWquSg" frameborder="0" allowfullscreen></iframe>
-   </div>
-   <p class="description">
-     I know this sucks, it was my first time using blender and animating. I tried my best so I'm proud of that!
-   </p>
-   
-   <div class="social-links">
-     <h3>Follow me:</h3>
-     <a href="https://www.instagram.com/m1yumi/" class="social-link">Instagram</a>
-     <a href="https://letterboxd.com/miyumi/" class="social-link">Letterboxd</a>
+
+   <div style="padding: 20px;">
+     <h1>portfolio</h1>
+     
+     <h2 class="work-title">Monster in the Mirror</h2>
+     <p class="work-year">2024</p>
+     
+     <div class="video-container">
+       <iframe src="https://www.youtube.com/embed/WHEWjtzUro4" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <p class="description">
+       My short film "Monster in the Mirror" explores the themes of femininity and Eurocentric beauty, and the toll these subjects have on young minority girls who are blossoming into their adolescence. Engaging with critical text and poetry that explore the themes of ethnicity and feeling sub-human, "Monster in the Mirror" aims to explore these feelings in the format of a coming-of-age story. I hope to invoke a message within my film that shows that— perhaps, yes, being a racial minority makes us different, but that doesn't mean we are monstrous. Symbolized by the monster, created by other pieces of native animals from Japan, Puerto Rico, and North America, I am to capture the feeling of not feeling comfortable in your skin and the sense of not feeling that you belong.
+     </p>
+     
+     <h2 class="work-title">First Blender Animation</h2>
+     <p class="work-year">2024</p>
+     
+     <!-- Second video (YouTube embed) -->
+     <div class="video-container">
+       <iframe src="https://www.youtube.com/embed/GKPzHrWquSg" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <p class="description">
+       I know this sucks, it was my first time using blender and animating. I tried my best so I'm proud of that!
+     </p>
+     
+     <div class="social-links">
+       <h3>Follow me:</h3>
+       <a href="https://www.instagram.com/m1yumi/" class="social-link">Instagram</a>
+       <a href="https://letterboxd.com/miyumi/" class="social-link">Letterboxd</a>
+     </div>
    </div>
    
  </body> 
 </html>
-
 
     
