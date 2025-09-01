@@ -1,18 +1,43 @@
 <html>
   <head> 
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
     <title>Lea Vazquez</title>
     <style>
-        canvas {
+      canvas {
         width: 400px !important;
         height: 300px !important;
+        position: relative;
+        z-index: 10;
       }
+      
       body {
         text-align: center;
         font-family: Arial, sans-serif;
         margin: 0;
-        padding-top: 80px; /* Add space for the sticky header */
+        padding-top: 80px;
+        height: 100vh;
+        overflow-x: hidden;
       }
+      
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+      }
+      
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 0;
+      }
+      
       .sticky-name {
         position: fixed;
         top: 0;
@@ -28,11 +53,13 @@
         align-items: center;
         justify-content: space-between;
       }
+      
       .name-image {
         height: 40px; 
         width: auto;
         margin: 0;
       }
+      
       .nav-link {
         padding: 0 30px;
         font-size: 1.2em;
@@ -40,21 +67,34 @@
         text-decoration: none;
         transition: color 0.3s ease;
       }
+      
       .nav-link:hover {
         color: #666;
       }
-      .photo {
-        max-width: 400px;
-        height: auto;
-        margin: 20px 0;
-        border-radius: 10px;
-      }
+      
       .content {
         padding: 20px;
+        position: relative;
+        z-index: 10;
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
   <body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+      <source src="background-video.mp4" type="video/mp4">
+      <source src="background-video.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    
+    <!-- Optional overlay to darken the video -->
+    <div class="overlay"></div>
+    
     <div class="sticky-name">
       <a href="portfolio.html" class="nav-link">works</a>
       <img src="name logo.png" alt="Lea Vazquez" class="name-image">
@@ -62,9 +102,6 @@
     </div>
     
     <div class="content">
-      <img src="https://raw.githubusercontent.com/m1yumi/m1yumi.github.io/main/lea.jpg" alt="Photo" class="photo">
     </div>
-    
-    <script src="sketch.js"></script>
   </body>
 </html>
