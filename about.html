@@ -42,7 +42,7 @@
      }
      .content {
        padding: 40px 20px;
-       max-width: 800px;
+       max-width: 1000px;
        margin: 0 auto;
      }
      .about-section {
@@ -53,11 +53,24 @@
        margin: 30px 0;
        text-align: left;
      }
+     .about-content {
+       display: flex;
+       gap: 40px;
+       align-items: flex-start;
+     }
+     .about-text {
+       flex: 2;
+     }
+     .about-image {
+       flex: 1;
+       min-width: 250px;
+     }
      .about-section h2 {
-       color: palevioletred;
+       color: #87CEEB;
        font-size: 1.8em;
        margin-bottom: 20px;
        text-align: center;
+       grid-column: 1 / -1;
      }
      .about-section p {
        line-height: 1.6;
@@ -65,12 +78,12 @@
        margin-bottom: 15px;
      }
      .profile-image {
-       width: 200px;
-       height: 200px;
-       border-radius: 50%;
-       margin: 20px auto;
-       display: block;
-       border: 3px solid palevioletred;
+       width: 100%;
+       max-width: 300px;
+       height: auto;
+       border-radius: 10px;
+       border: 3px solid #87CEEB;
+       object-fit: cover;
      }
      .skills-grid {
        display: grid;
@@ -82,12 +95,12 @@
        background: #f8f8f8;
        padding: 15px;
        border-radius: 10px;
-       border: 2px solid palevioletred;
+       border: 2px solid #87CEEB;
        font-weight: 600;
        color: #333;
      }
      .contact-info {
-       background: linear-gradient(135deg, palevioletred, #ff69b4);
+       background: linear-gradient(135deg, #87CEEB, #B0E0E6);
        color: white;
        padding: 30px;
        border-radius: 20px;
@@ -110,7 +123,22 @@
      }
      .contact-link:hover {
        background: white;
-       color: palevioletred;
+       color: #537fb5;
+     }
+
+     /* Mobile responsiveness */
+     @media (max-width: 768px) {
+       .about-content {
+         flex-direction: column;
+         gap: 20px;
+       }
+       .about-image {
+         order: -1;
+         text-align: center;
+       }
+       .profile-image {
+         max-width: 250px;
+       }
      }
    </style>
  </head>
@@ -122,17 +150,21 @@
    </div>
 
    <div class="content">
-     <h1>about</h1>
-     
-     <img src="https://raw.githubusercontent.com/m1yumi/m1yumi.github.io/main/lea.jpg" alt="Lea Vazquez" class="profile-image">
      
      <div class="about-section">
        <h2>Hi, I'm Lea!</h2>
-       <p>I'm a current graduate from the Univeristy of California, Santa Barbara. With a BA in English, I'm a creative individual passionate about storytelling through visual media. My work explores themes of identity, culture, and the human experience, often drawing from my own multicultural background.</p>
-       
-       <p>Currently, I'm diving into the world of digital art and animation, always trying my best to push creative boundaries and learn new techniques. Whether it's through film, 3D animation, or interactive web experiences, I love creating work that resonates with people on a personal level.</p>
-       
-       <p>When I'm not creating, you can find me exploring new films, experimenting with generative art, or working on projects that blend technology with artistic expression.</p>
+       <div class="about-content">
+         <div class="about-image">
+           <img src="profile.png" alt="Lea Vazquez" class="profile-image">
+         </div>
+         <div class="about-text">
+           <p>I'm a current graduate from the Univeristy of California, Santa Barbara. With a BA in English, I'm a creative individual passionate about storytelling through visual media. My work explores themes of identity, culture, and the human experience, often drawing from my own multicultural background.</p>
+           
+           <p>Currently, I'm diving into the world of digital art and animation, always trying my best to push creative boundaries and learn new techniques. Whether it's through film, 3D animation, or interactive web experiences, I love creating work that resonates with people on a personal level.</p>
+           
+           <p>When I'm not creating, you can find me exploring new films, experimenting with generative art, or working on projects that blend technology with artistic expression.</p>
+         </div>
+       </div>
      </div>
     
      <div class="contact-info">
