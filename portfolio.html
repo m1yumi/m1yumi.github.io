@@ -47,9 +47,9 @@
      
      .portfolio-grid {
        display: grid;
-       grid-template-columns: repeat(4, 1fr);
-       gap: 30px;
-       max-width: 1400px;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 40px;
+       max-width: 1200px;
        margin: 0 auto;
        padding: 20px;
      }
@@ -69,7 +69,7 @@
      }
      .video-container iframe {
        width: 100%;
-       height: 200px;
+       height: 315px;
        border-radius: 10px;
      }
      .work-title {
@@ -81,7 +81,7 @@
      .work-year {
        font-size: 0.9em;
        font-weight: 600;
-       color: palevioletred;
+       color: #6271A0;
        margin-bottom: 15px;
      }
      .description {
@@ -89,20 +89,14 @@
        line-height: 1.4;
        font-size: 0.85em;
        padding: 15px;
-       border: 2px solid palevioletred;
+       border: 2px solid #6271A0;
        border-radius: 20px;
        margin-top: 15px;
      }
      
-     @media (max-width: 1200px) {
-       .portfolio-grid {
-         grid-template-columns: repeat(3, 1fr);
-       }
-     }
-     
      @media (max-width: 900px) {
        .portfolio-grid {
-         grid-template-columns: repeat(2, 1fr);
+         grid-template-columns: 1fr;
        }
      }
      
@@ -123,10 +117,10 @@
        color: #333;
        text-decoration: none;
        border-radius: 5px;
-       border: 2px solid palevioletred;
+       border: 2px solid #6271A0;
      }
      .social-link:hover {
-       background-color: palevioletred;
+       background-color: #6271A0;
        color: white;
      }
    </style>
@@ -170,7 +164,7 @@
          <p class="work-year">2024</p>
 
          <div class="video-container">
-           <iframe src="y2k_plaid_generator (1).html" width="100%" height="200px" frameborder="0"></iframe>
+           <iframe src="y2k_plaid_generator (1).html" width="100%" height="600px" frameborder="0"></iframe>
          </div>
          <p class="description">
            An interactive Y2K-inspired plaid pattern generator built with p5.js. Click to generate new patterns, press SPACE to change styles, and press R for random animations. This project explores generative art and nostalgic design aesthetics from the early 2000s.
@@ -180,7 +174,7 @@
        <div class="portfolio-item" style="opacity: 0.3;">
          <h2 class="work-title">Coming Soon</h2>
          <p class="work-year">2025</p>
-         <div style="height: 200px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999;">
+         <div style="height: 315px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999;">
            Future Project
          </div>
          <p class="description">
