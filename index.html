@@ -72,6 +72,16 @@
         color: #666;
       }
       
+      .nav-image {
+        height: 30px;
+        width: auto;
+        transition: opacity 0.3s ease;
+      }
+      
+      .nav-image:hover {
+        opacity: 0.7;
+      }
+      
       .content {
         padding: 20px;
         position: relative;
@@ -96,9 +106,13 @@
     <div class="overlay"></div>
     
     <div class="sticky-name">
-      <a href="portfolio.html" class="nav-link">works</a>
+      <a href="portfolio.html" class="nav-link">
+        <img src="works.png" alt="Works" class="nav-image">
+      </a>
       <img src="name logo.png" alt="Lea Vazquez" class="name-image">
-      <a href="about.html" class="nav-link">about</a>
+      <a href="about.html" class="nav-link">
+        <img src="about.png" alt="About" class="nav-image">
+      </a>
     </div>
     
     <div class="content">
