@@ -40,6 +40,14 @@
      .nav-link:hover {
        color: #666;
      }
+     .nav-image {
+       height: 30px;
+       width: auto;
+       transition: opacity 0.3s ease;
+     }
+     .nav-image:hover {
+       opacity: 0.7;
+     }
      .content {
        padding: 40px 20px;
        max-width: 1000px;
@@ -144,9 +152,13 @@
  </head>
  <body>
    <div class="sticky-name">
-     <a href="portfolio.html" class="nav-link">works</a>
+     <a href="portfolio.html" class="nav-link">
+       <img src="about.png" alt="Works" class="nav-image">
+     </a>
      <img src="name logo.png" alt="Lea Vazquez" class="name-image">
-     <a href="index.html" class="nav-link">home</a>
+     <a href="index.html" class="nav-link">
+       <img src="home.png" alt="Home" class="nav-image">
+     </a>
    </div>
 
    <div class="content">
