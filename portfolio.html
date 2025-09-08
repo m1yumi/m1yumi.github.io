@@ -44,36 +44,74 @@
        max-width: 600px;
        height: auto;
      }
+     
+     .portfolio-grid {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 30px;
+       max-width: 1400px;
+       margin: 0 auto;
+       padding: 20px;
+     }
+     .portfolio-item {
+       background: white;
+       border-radius: 15px;
+       padding: 20px;
+       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+       transition: transform 0.3s ease;
+     }
+     .portfolio-item:hover {
+       transform: translateY(-5px);
+     }
      .video-container {
-       width: 80%;
-       max-width: 600px;
-       margin: 20px auto;
+       width: 100%;
+       margin: 15px 0;
      }
      .video-container iframe {
        width: 100%;
-       height: 315px;
+       height: 200px;
+       border-radius: 10px;
      }
      .work-title {
-       font-size: 2em;
+       font-size: 1.3em;
        font-weight: 700;
-       margin: 40px 0 10px 0;
+       margin: 15px 0 8px 0;
        color: #333;
      }
      .work-year {
-       font-size: 1.2em;
+       font-size: 0.9em;
        font-weight: 600;
        color: palevioletred;
-       margin-bottom: 20px;
+       margin-bottom: 15px;
      }
      .description {
-       max-width: 800px;
-       margin: 20px auto;
        text-align: left;
-       line-height: 1.6;
-       padding: 10px;
+       line-height: 1.4;
+       font-size: 0.85em;
+       padding: 15px;
        border: 2px solid palevioletred;
-       border-radius: 40px;
+       border-radius: 20px;
+       margin-top: 15px;
      }
+     
+     @media (max-width: 1200px) {
+       .portfolio-grid {
+         grid-template-columns: repeat(3, 1fr);
+       }
+     }
+     
+     @media (max-width: 900px) {
+       .portfolio-grid {
+         grid-template-columns: repeat(2, 1fr);
+       }
+     }
+     
+     @media (max-width: 600px) {
+       .portfolio-grid {
+         grid-template-columns: 1fr;
+       }
+     }
+     
      .social-links {
        margin: 30px 0;
      }
@@ -101,38 +139,55 @@
    </div>
 
    <div style="padding: 20px;">
-     <h1>portfolio</h1>
      
-     <h2 class="work-title">Monster in the Mirror</h2>
-     <p class="work-year">2024</p>
-     
-     <div class="video-container">
-       <iframe src="https://www.youtube.com/embed/WHEWjtzUro4" frameborder="0" allowfullscreen></iframe>
-     </div>
-     <p class="description">
-       My short film "Monster in the Mirror" explores the themes of femininity and Eurocentric beauty, and the toll these subjects have on young minority girls who are blossoming into their adolescence. Engaging with critical text and poetry that explore the themes of ethnicity and feeling sub-human, "Monster in the Mirror" aims to explore these feelings in the format of a coming-of-age story. I hope to invoke a message within my film that shows that— perhaps, yes, being a racial minority makes us different, but that doesn't mean we are monstrous. Symbolized by the monster, created by other pieces of native animals from Japan, Puerto Rico, and North America, I am to capture the feeling of not feeling comfortable in your skin and the sense of not feeling that you belong.
-     </p>
-     
-     <h2 class="work-title">First Blender Animation</h2>
-     <p class="work-year">2024</p>
-     
-     <!-- Second video (YouTube embed) -->
-     <div class="video-container">
-       <iframe src="https://www.youtube.com/embed/GKPzHrWquSg" frameborder="0" allowfullscreen></iframe>
-     </div>
-     <p class="description">
-       I know this sucks, it was my first time using blender and animating. I tried my best so I'm proud of that!
-     </p>
+     <div class="portfolio-grid">
+       <div class="portfolio-item">
+         <h2 class="work-title">Monster in the Mirror</h2>
+         <p class="work-year">2024</p>
+         
+         <div class="video-container">
+           <iframe src="https://www.youtube.com/embed/WHEWjtzUro4" frameborder="0" allowfullscreen></iframe>
+         </div>
+         <p class="description">
+           My short film "Monster in the Mirror" explores the themes of femininity and Eurocentric beauty, and the toll these subjects have on young minority girls who are blossoming into their adolescence. Engaging with critical text and poetry that explore the themes of ethnicity and feeling sub-human, "Monster in the Mirror" aims to explore these feelings in the format of a coming-of-age story. I hope to invoke a message within my film that shows that— perhaps, yes, being a racial minority makes us different, but that doesn't mean we are monstrous. Symbolized by the monster, created by other pieces of native animals from Japan, Puerto Rico, and North America, I am to capture the feeling of not feeling comfortable in your skin and the sense of not feeling that you belong.
+         </p>
+       </div>
+       
+       <div class="portfolio-item">
+         <h2 class="work-title">Umbrellas of Cherbourg</h2>
+         <p class="work-year">2024</p>
+         
+         <div class="video-container">
+           <iframe src="https://www.youtube.com/embed/GKPzHrWquSg" frameborder="0" allowfullscreen></iframe>
+         </div>
+         <p class="description">
+           My first venture into 3D animation using Blender, this piece represents an important milestone in my creative journey. While I was still learning the fundamentals of 3D modeling, lighting, and animation principles, this project taught me invaluable lessons about spatial thinking and digital storytelling. The experience of navigating Blender's interface, understanding keyframes, and bringing static objects to life sparked my passion for 3D animation and laid the foundation for future projects.
+         </p>
+       </div>
 
-    <h2 class="work-title">Y2K Interactive Plaid Generator</h2>
-<p class="work-year">2024</p>
+       <div class="portfolio-item">
+         <h2 class="work-title">Y2K Interactive Plaid Generator</h2>
+         <p class="work-year">2024</p>
 
-<div class="video-container">
-  <iframe src="y2k_plaid_generator (1).html" width="100%" height="600px" frameborder="0"></iframe>
-</div>
-<p class="description">
-  An interactive Y2K-inspired plaid pattern generator built with p5.js. Click to generate new patterns, press SPACE to change styles, and press R for random animations. This project explores generative art and nostalgic design aesthetics from the early 2000s.
-</p>
+         <div class="video-container">
+           <iframe src="y2k_plaid_generator (1).html" width="100%" height="200px" frameborder="0"></iframe>
+         </div>
+         <p class="description">
+           An interactive Y2K-inspired plaid pattern generator built with p5.js. Click to generate new patterns, press SPACE to change styles, and press R for random animations. This project explores generative art and nostalgic design aesthetics from the early 2000s.
+         </p>
+       </div>
+
+       <div class="portfolio-item" style="opacity: 0.3;">
+         <h2 class="work-title">Coming Soon</h2>
+         <p class="work-year">2025</p>
+         <div style="height: 200px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999;">
+           Future Project
+         </div>
+         <p class="description">
+           More exciting work coming soon...
+         </p>
+       </div>
+     </div>
      
      <div class="social-links">
        <h3>Follow me:</h3>
@@ -143,5 +198,4 @@
    
  </body> 
 </html>
-
     
