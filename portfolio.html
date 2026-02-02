@@ -71,6 +71,9 @@
      .portfolio-item:hover {
        transform: translateY(-5px);
      }
+     .portfolio-item.full-width {
+       grid-column: 1 / -1;
+     }
      .video-container {
        width: 100%;
        margin: 15px 0;
@@ -106,6 +109,9 @@
        .portfolio-grid {
          grid-template-columns: 1fr;
        }
+       .portfolio-item.full-width {
+         grid-column: 1;
+       }
      }
      
      @media (max-width: 600px) {
@@ -130,6 +136,34 @@
      .social-link:hover {
        background-color: #6271A0;
        color: white;
+     }
+     .editing-icons {
+       display: flex;
+       justify-content: center;
+       gap: 60px;
+       margin: 20px 0;
+     }
+     .editing-icon-item {
+       text-align: center;
+       flex: 1;
+       max-width: 300px;
+     }
+     .editing-icon-item img {
+       width: 100%;
+       max-width: 200px;
+       height: auto;
+       border-radius: 10px;
+       transition: transform 0.3s ease;
+       cursor: pointer;
+     }
+     .editing-icon-item img:hover {
+       transform: scale(1.05);
+     }
+     .editing-icon-title {
+       font-size: 1em;
+       font-weight: 600;
+       color: #6271A0;
+       margin-top: 10px;
      }
    </style>
  </head>
@@ -158,18 +192,6 @@
            My short film "Monster in the Mirror" explores the themes of femininity and Eurocentric beauty, and the toll these subjects have on young minority girls who are blossoming into their adolescence. Engaging with critical text and poetry that explore the themes of ethnicity and feeling sub-human, "Monster in the Mirror" aims to explore these feelings in the format of a coming-of-age story. I hope to invoke a message within my film that shows that— perhaps, yes, being a racial minority makes us different, but that doesn't mean we are monstrous. Symbolized by the monster, created by other pieces of native animals from Japan, Puerto Rico, and North America, I am to capture the feeling of not feeling comfortable in your skin and the sense of not feeling that you belong.
          </p>
        </div>
-       
-       <div class="portfolio-item">
-         <h2 class="work-title">Umbrellas of Cherbourg</h2>
-         <p class="work-year">2024</p>
-         
-         <div class="video-container">
-           <iframe src="https://www.youtube.com/embed/GKPzHrWquSg" frameborder="0" allowfullscreen></iframe>
-         </div>
-         <p class="description">
-           My first venture into 3D animation using Blender, this piece represents an important milestone in my creative journey. While I was still learning the fundamentals of 3D modeling, lighting, and animation principles, this project taught me invaluable lessons about spatial thinking and digital storytelling. The experience of navigating Blender's interface, understanding keyframes, and bringing static objects to life sparked my passion for 3D animation and laid the foundation for future projects.
-         </p>
-       </div>
 
        <div class="portfolio-item">
          <h2 class="work-title">Y2K Interactive Plaid Generator</h2>
@@ -183,14 +205,31 @@
          </p>
        </div>
 
-       <div class="portfolio-item" style="opacity: 0.3;">
-         <h2 class="work-title">Coming Soon</h2>
+       <div class="portfolio-item full-width">
+         <h2 class="work-title">Editing Works</h2>
          <p class="work-year">2025</p>
-         <div style="height: 315px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999;">
-           Future Project
+         
+         <div class="editing-icons">
+           <div class="editing-icon-item">
+             <a href="https://drive.google.com/file/d/1Gxd_vt9XOYPCpCQfE8NNUmX12cFYtS27/view?usp=drive_link" target="_blank">
+               <img src="hardediting.png" alt="Hard Editing Examples">
+             </a>
+             <p class="editing-icon-title">Hard Editing Examples</p>
+           </div>
+           <div class="editing-icon-item">
+             <a href="https://drive.google.com/drive/folders/10rap5Q_kM2H3m137E-h9g_kv8_I1n6lK?usp=sharing" target="_blank">
+               <img src="lightediting.png" alt="Light Editing Examples">
+             </a>
+             <p class="editing-icon-title">Light Editing Examples</p>
+           </div>
          </div>
+         
          <p class="description">
-           More exciting work coming soon...
+           I bring two distinct types of editing experience to my work: hard and soft editing. Each approach serves different purposes and audiences.<br><br>
+           
+           In my editing classes, I focused primarily on style and grammar revision. The curriculum emphasized identifying and addressing fundamental issues with organization, argument, and clarity. We practiced traditional hand-editing techniques, putting marks on manuscripts to develop a tactile understanding of the revision process. This intensive approach taught me to see the bigger picture and help writers reshape their work at the conceptual level.<br><br>
+           
+           During my editorial internship, I specialized in lighter, more targeted editing using Microsoft Word's track changes feature. This digital approach allowed for efficient collaboration with authors while focusing on grammar, syntax, and style consistency. The streamlined process was ideal for drafts that needed polishing rather than major restructuring.
          </p>
        </div>
      </div>
@@ -205,4 +244,3 @@
    
  </body> 
 </html>
-    
